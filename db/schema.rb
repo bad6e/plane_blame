@@ -1,4 +1,4 @@
-us# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,10 +11,11 @@ us# encoding: UTF-8
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109202144) do
+ActiveRecord::Schema.define(version: 20151109215814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "airlines", force: :cascade do |t|
     t.string   "name"
@@ -24,13 +25,11 @@ ActiveRecord::Schema.define(version: 20151109202144) do
   end
 
   create_table "departures", force: :cascade do |t|
-    t.datetime "scheduled_gate_dep"
-    t.datetime "actual_gate_dep"
-    t.datetime "scheduled_gate_ar"
-    t.datetime "actual_gate_ar"
+    t.hstore   "delays"
     t.integer  "airline_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "flight_id"
   end
 
   add_index "departures", ["airline_id"], name: "index_departures_on_airline_id", using: :btree
