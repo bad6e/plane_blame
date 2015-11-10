@@ -2,6 +2,6 @@
 
 <ul>
 <% @flights.each do |flight| %>
-  <ol><%= flight.flight_id %>: <%= flight.delays %></ol>
+  <ol>Flight Num: <%= flight.flight_number %>: Flight ID: <%= flight.flight_id %>: <%= flight.delays %>: </ol>
   <% end %>
 </ul>

@@ -13,9 +13,21 @@ class FlightsPresenter
     delays = worker[:flightStatuses].map {|r| r[:delays]}
   end
 
+  def flight_number
+    flight_number = worker[:flightStatuses].map {|r| r[:flightNumber]}
+  end
+
+  def join
+    southwest_flight_ids.zip(southwest_delays)
+  end
+
+  def flatten
+    join.zip(flight_number).map {|r| r.flatten}
+  end
+
   def save
-    southwest_flight_ids.zip(southwest_delays).each do |r|
-      Departure.create(flight_id: r[0], delays: r[1], airline_id: 1)
+    flatten.each do |r|
+      Departure.create(flight_id: r[0], delays: r[1], flight_number: r[2], airline_id: 1)
     end
   end
 end
