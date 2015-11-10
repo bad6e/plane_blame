@@ -1,1 +1,7 @@
-<h2>Hi Mom</h2>
+<h2>SouthWest Data Out of Denver</h2>
+
+<ul>
+<% @flights.each do |flight| %>
+  <ol><%= flight.flight_id %>: <%= flight.delays %></ol>
+  <% end %>
+</ul>
