@@ -1,5 +1,5 @@
 desc "update delays"
 task :southwest_denver => :environment do
-  puts "To Infinity and Beyond!"
-
+  puts "Updating Southwest Denver API"
+  FlightsPresenter.new.save
 end
