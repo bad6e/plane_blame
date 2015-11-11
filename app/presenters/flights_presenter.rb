@@ -14,4 +14,8 @@ class FlightsPresenter
   def airline_late_percentage(airline_id)
     Departure.total_late_percentage(airline_id)
   end
+
+  def last_updated_at
+    Departure.last_updated_at
+  end
 end

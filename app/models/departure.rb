@@ -25,4 +25,8 @@ class Departure < ActiveRecord::Base
   def self.total_late_percentage(airline_id)
     ((total_on_time_number(airline_id).to_f)/(total_flights_per_airline(airline_id).to_f)) * 100
   end
+
+  def self.last_updated_at
+    last.created_at.in_time_zone('America/Denver').strftime("%A, %B %d, %Y at %I:%M%p")
+  end
 end
