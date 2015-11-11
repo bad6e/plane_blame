@@ -34,18 +34,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 project">
-      <h3 id="counter">0</h3>
+      <h3 id="counter"><%= @statistics.total_departures %></h3>
       <h4>Total Flights</h4>
       <p>Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie. </p>
     </div>
     <div class="col-md-4 project">
-      <h3 id="counter1">0</h3>
-      <h4>On Time Flights</h4>
+      <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
+      <h4>On Time Departures</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>
     </div>
     <div class="col-md-4 project">
-      <h3 id="counter2" style="margin-left: 20px;">0</h3>
-      <h4 style="margin-left: 20px;">Late Flights</h4>
+      <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
+      <h4 style="margin-left: 20px;">Late Departures</h4>
       <p>Consectetur adipiscing elit quisque tempus eget diam et laoreet phasellus ut nisi id leo molestie adipiscing vitae a vel. </p>
     </div>
   </div>
@@ -63,10 +63,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 bar">
-      <div class="progB chart" data-percent="64"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(1) %>"  data-animate="3500">
         <div class="chart chart-content">
-          <div class="percentage" data-percent="64">
-            <span class="percent">64</span>
+          <div class="percentage" data-percent="62">
+            <span class="percent"><%= @statistics.airline_late_percentage(1) %></span>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="col-md-3 bar">
-      <div class="progB chart" data-percent="22"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(2) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">22</span>
@@ -89,7 +89,7 @@
       </div>
     </div>
     <div class="col-md-3 bar ">
-      <div class="progB chart" data-percent="84"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(3) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">84</span>
@@ -102,7 +102,7 @@
       </div>
     </div>
     <div class="col-md-3 bar ">
-      <div class="progB chart" data-percent="45"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(4) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="45">
             <span class="percent">45</span>
@@ -120,7 +120,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 bar">
-      <div class="progB chart" data-percent="64"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(5) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="64">
             <span class="percent">64</span>
@@ -133,7 +133,7 @@
       </div>
     </div>
     <div class="col-md-4 bar">
-      <div class="progB chart" data-percent="22"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(6) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">22</span>
@@ -146,7 +146,7 @@
       </div>
     </div>
     <div class="col-md-4 bar ">
-      <div class="progB chart" data-percent="84"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(7) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">84</span>

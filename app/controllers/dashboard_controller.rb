@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def show
-    @flights = Departure.all
+    @statistics = FlightsPresenter.new
   end
 end
 
