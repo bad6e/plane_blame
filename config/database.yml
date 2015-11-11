@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: planeblame_production
-  username: planeblame
-  password: <%= ENV['PLANEBLAME_DATABASE_PASSWORD'] %>
