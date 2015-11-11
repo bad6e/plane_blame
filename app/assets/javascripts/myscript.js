@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 					  barColor:'#2f2f2f',
 					  trackColor:'#dcdcdc',
 					  lineCap:false,
-					  lineWidth:'2',
+					  lineWidth:'3',
 					  size:'72',
 					  scaleColor:false,
 
