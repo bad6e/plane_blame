@@ -33,20 +33,27 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-12 cBusiness">
+      <h3>Denever International Airport Statistics</h3>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
     <div class="col-md-4 project">
       <h3 id="counter"><%= @statistics.total_departures %></h3>
       <h4>Total Flights</h4>
-      <p>Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie. </p>
     </div>
     <div class="col-md-4 project">
       <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
       <h4>On Time Departures</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>
+      <p>Last Updated at <%= @statistics.last_updated_at %></p>
     </div>
     <div class="col-md-4 project">
       <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
       <h4 style="margin-left: 20px;">Late Departures</h4>
-      <p>Consectetur adipiscing elit quisque tempus eget diam et laoreet phasellus ut nisi id leo molestie adipiscing vitae a vel. </p>
     </div>
   </div>
 </div>
@@ -54,8 +61,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 cBusiness">
-      <h3>Denever International Airport Statistics &ndash; Per Airline</h3>
-      <h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>
+      <h4><strong>Percentage of On-Time Departures for each Major Airline.</strong></h4>
     </div>
   </div>
 </div>
@@ -66,7 +72,7 @@
       <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(1) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="62">
-            <span class="percent"><%= @statistics.airline_late_percentage(1) %></span>
+            <span class="percent"></span>
           </div>
         </div>
       </div>

@@ -10,7 +10,11 @@ window.jQuery = window.$ = jQuery;
 jQuery(document).ready(function(){
     var chart = $('.chart'),
         chartNr = $('.chart-content'),
-        chartParent = chart.parent();
+        chartParent = chart.parent(),
+        colorRotation =  function(percent) {
+                          percent /= 100;
+                          return "rgb(" + Math.round(255 * (1-percent)) + ", " + Math.round(255 * percent) + ", 0)";
+                          };
 
     function centerChartsNr() {
         chartNr.css({
@@ -23,15 +27,17 @@ jQuery(document).ready(function(){
         $(window).resize(centerChartsNr);
 
         chartParent.each(function () {
+
             $(this).onScreen({
+
                 doIn: function () {
                     $(this).find('.chart').easyPieChart({
-                       animate: 1000,
+                      animate: 1000,
 					  lineWidth: 3,
-					  barColor:'#2f2f2f',
+					  barColor: colorRotation,
 					  trackColor:'#dcdcdc',
 					  lineCap:false,
-					  lineWidth:'2',
+					  lineWidth:'3',
 					  size:'72',
 					  scaleColor:false,
 
