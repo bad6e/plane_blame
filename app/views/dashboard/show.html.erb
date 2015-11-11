@@ -63,10 +63,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 bar">
-      <div class="progB chart" data-percent="64"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(1) %>"  data-animate="3500">
         <div class="chart chart-content">
-          <div class="percentage" data-percent="64">
-            <span class="percent">64</span>
+          <div class="percentage" data-percent="62">
+            <span class="percent"><%= @statistics.airline_late_percentage(1) %></span>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="col-md-3 bar">
-      <div class="progB chart" data-percent="22"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(2) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">22</span>
@@ -89,7 +89,7 @@
       </div>
     </div>
     <div class="col-md-3 bar ">
-      <div class="progB chart" data-percent="84"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(3) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">84</span>
@@ -102,7 +102,7 @@
       </div>
     </div>
     <div class="col-md-3 bar ">
-      <div class="progB chart" data-percent="45"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(4) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="45">
             <span class="percent">45</span>
@@ -120,7 +120,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 bar">
-      <div class="progB chart" data-percent="64"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(5) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="64">
             <span class="percent">64</span>
@@ -133,7 +133,7 @@
       </div>
     </div>
     <div class="col-md-4 bar">
-      <div class="progB chart" data-percent="22"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(6) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">22</span>
@@ -146,7 +146,7 @@
       </div>
     </div>
     <div class="col-md-4 bar ">
-      <div class="progB chart" data-percent="84"  data-animate="3500">
+      <div class="progB chart" data-percent="<%= @statistics.airline_late_percentage(7) %>"  data-animate="3500">
         <div class="chart chart-content">
           <div class="percentage" data-percent="22">
             <span class="percent">84</span>
