@@ -3,7 +3,7 @@ class CreateDepartures < ActiveRecord::Migration
     enable_extension :hstore
 
     create_table :departures do |t|
-      t.hstore :delays
+      t.integer :dep_gate_delays
       t.references :airline, index: true, foreign_key: true
 
       t.timestamps null: false

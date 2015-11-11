@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20151110165403) do
   end
 
   create_table "departures", force: :cascade do |t|
-    t.hstore   "delays"
+    t.integer  "dep_gate_delays"
     t.integer  "airline_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "flight_id"
     t.string   "flight_number"
   end

@@ -9,13 +9,12 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem "bootstrap-sass", "~> 3.3.5"
-gem "bootswatch-rails"
+
 gem "hurley"
 gem "figaro"
 gem 'rails_12factor'
 gem 'whenever', :require => false
-gem 'materialize-sass'
+gem "bootstrap-sass", "~> 3.3.5"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
