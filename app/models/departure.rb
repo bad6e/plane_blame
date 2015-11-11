@@ -14,11 +14,15 @@ class Departure < ActiveRecord::Base
     where(["dep_gate_delays < ?", 20]).count
   end
 
-  def self.total_late_number(airline_id)
-    where("dep_gate_delays > ? AND airline_id = ?", 20, airline_id).count
+  def self.total_on_time_number(airline_id)
+    where("dep_gate_delays < ? AND airline_id = ?", 20, airline_id).count
+  end
+
+  def self.total_flights_per_airline(airline_id)
+    where("airline_id = ?", airline_id).count
   end
 
   def self.total_late_percentage(airline_id)
-    ((total_late_number(airline_id).to_f)/(total_departures.to_f) * 100)
+    ((total_on_time_number(airline_id).to_f)/(total_flights_per_airline(airline_id).to_f)) * 100
   end
 end
