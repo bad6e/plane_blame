@@ -7,7 +7,7 @@ class Flights
     @airline_code = airline_code
   end
 
-  def southwest_flight_ids
+  def flight_ids
     flight_ids = worker[:flightStatuses].map {|r| r[:flightId]}
   end
 
@@ -33,7 +33,7 @@ class Flights
   end
 
   def join
-    southwest_flight_ids.zip(gate_departure_delay)
+    flight_ids.zip(gate_departure_delay)
   end
 
   def flatten
