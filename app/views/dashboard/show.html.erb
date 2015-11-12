@@ -87,7 +87,7 @@
       </div>
       <div class="textP">
         <h3>Southwest</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(1) %> Flights Measured</p>
       </div>
     </div>
     <div class="col-md-3 bar">
@@ -100,7 +100,7 @@
       </div>
       <div class="textP">
         <h3>United</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(2) %> Flights Measured</p>
       </div>
     </div>
     <div class="col-md-3 bar ">
@@ -113,7 +113,7 @@
       </div>
       <div class="textP">
         <h3>Frontier</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(3) %> Flights Measured</p>
       </div>
     </div>
     <div class="col-md-3 bar ">
@@ -126,7 +126,7 @@
       </div>
       <div class="textP">
         <h3>Delta</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(4) %> Flights Measured</p>
       </div>
     </div>
   </div>
@@ -144,7 +144,7 @@
       </div>
       <div class="textP">
         <h3>American</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(5) %> Flights Measured</p>
       </div>
     </div>
     <div class="col-md-4 bar">
@@ -157,7 +157,7 @@
       </div>
       <div class="textP">
         <h3>Jet Blue</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(6) %> Flights Measured</p>
       </div>
     </div>
     <div class="col-md-4 bar ">
@@ -170,18 +170,15 @@
       </div>
       <div class="textP">
         <h3>Spirit</h3>
-        <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>
+        <p><%= @statistics.total_number_of_flights(7) %> Flights Measured</p>
       </div>
     </div>
   </div>
+</div>
+<div class='container disclaimer'>
+<h6>*Considered On Time if actual departure is 15 minutes or less from scheduled departure.</h6>
 </div>
 <br>
 <br>
 
 <%= render partial: 'layouts/footer' %>
-
-
-
-<script type="text/javascript">
-
-</script>

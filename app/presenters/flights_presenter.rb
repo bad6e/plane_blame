@@ -18,4 +18,8 @@ class FlightsPresenter
   def last_updated_at
     Departure.last_updated_at
   end
+
+  def total_number_of_flights(airline_id)
+    Departure.total_flights_per_airline(airline_id)
+  end
 end
