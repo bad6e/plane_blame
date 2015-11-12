@@ -1,5 +1,6 @@
 class Departure < ActiveRecord::Base
   belongs_to :airline
+  belongs_to :airport
   validates :flight_id, presence: true, uniqueness: true
 
   def self.total_departures
