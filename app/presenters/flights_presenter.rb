@@ -11,8 +11,8 @@ class FlightsPresenter
     Departure.total_on_time_flights
   end
 
-  def airline_late_percentage(airline_id)
-    Departure.total_late_percentage(airline_id)
+  def airline_on_time_percentage(airline_id)
+    Departure.total_on_time_percentage(airline_id)
   end
 
   def last_updated_at
