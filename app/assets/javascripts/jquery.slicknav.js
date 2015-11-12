@@ -1,3 +1,7 @@
+jQuery(document).ready(function(){
+  jQuery('#menu').slicknav();
+});
+
 /*!
 	SlickNav Responsive Mobile Menu
 	(c) 2014 Josh Cope
