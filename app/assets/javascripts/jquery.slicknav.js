@@ -1,3 +1,7 @@
+jQuery(document).ready(function(){
+  jQuery('#menu').slicknav();
+});
+
 /*!
 	SlickNav Responsive Mobile Menu
 	(c) 2014 Josh Cope
@@ -7,7 +11,7 @@
 	var
 	// default settings object.
 	defaults = {
-		label: 'MENU',
+		label: 'PLANE BLAME',
 		duplicate: true,
 		duration: 200,
 		easingOpen: 'swing',

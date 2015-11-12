@@ -44,12 +44,12 @@ body{
 	border-left: 3000px solid transparent;
 }
 .logo{
-	margin-top: 60px;
+	margin-top: 55px;
 	font-family: 'Roboto', 'sans-serif';
-	font-size:30px;
-	font-weight:700;
+	font-size:20px;
+	font-weight:200;
 	text-transform:uppercase;
-	color:#fff;
+	color:#000;
 }
 .logo span{
 	color:#1fcdff;
@@ -67,6 +67,24 @@ body{
 	color:#918E8A
 ;
 	text-decoration:none;
+}
+
+.logo h2{
+	// border-bottom:4px solid #1fcdff;
+	font-family: 'Open Sans', sans-serif;
+	font-size:45px;
+	font-weight:700;
+	letter-spacing: -2px;
+	color: black;
+}
+
+#welcome_to {
+	margin-left: 180px;
+}
+
+
+#plane_blame {
+	margin-left: 50px;
 }
 
 .gauge {
@@ -144,7 +162,7 @@ border: none;
 .camera_caption h2{
 	border-bottom:4px solid #1fcdff;
 	font-family: 'Open Sans', sans-serif;
-	font-size:100px;
+	font-size:70px;
 	font-weight:700;
 	letter-spacing: -2px;
 }
@@ -186,6 +204,8 @@ border: none;
 	.about p{
 		text-align: justify;
 	}
+
+
 }
 @media screen and (max-width: 1229px){
 	.pic1Ab{
@@ -193,6 +213,19 @@ border: none;
 	}
 	.pic2Ab{
 		margin-bottom:20px ;
+	}
+
+	.logo h2{
+		// border-bottom:4px solid #1fcdff;
+		font-family: 'Open Sans', sans-serif;
+		font-size:37px;
+		font-weight:700;
+		letter-spacing: -2px;
+		color: black;
+	}
+
+	#welcome_to{
+		margin-left:220px;
 	}
 
 }
@@ -223,6 +256,7 @@ border: none;
 	.soc ul li{
 		margin-bottom: 20px;
 	}
+
 }
 @media screen and (max-width: 323px){
 	.footer .fEmail{
@@ -235,6 +269,7 @@ border: none;
 	.news p{
 		text-align: justify;
 	}
+
 
 }
 @media screen and (max-width: 1229px) {
@@ -290,6 +325,19 @@ border: none;
 	line-height: 23px;
 	color:#666666;
 }
+
+.logo h2{
+		// border-bottom:4px solid #1fcdff;
+		font-family: 'Open Sans', sans-serif;
+		font-size:37px;
+		font-weight:700;
+		letter-spacing: -2px;
+		color: black;
+	}
+
+	#welcome_to{
+		margin-left:200px;
+	}
 
 
 .cBusiness{
@@ -1823,6 +1871,20 @@ textarea {
 		display:none;
 	}
 
+	.logo h2{
+	// border-bottom:4px solid #1fcdff;
+	font-family: 'Open Sans', sans-serif;
+	font-size:35px;
+	font-weight:700;
+	letter-spacing: -2px;
+	color: black;
+	}
+
+	#welcome_to{
+		margin-left:160px;
+	}
+
+
 }
 
 
@@ -1859,6 +1921,15 @@ textarea {
 	}
 	.line6{
 		height:350px;
+	}
+
+	.logo h2{
+		// border-bottom:4px solid #1fcdff;
+		font-family: 'Open Sans', sans-serif;
+		font-size:0px;
+		font-weight:700;
+		letter-spacing: -2px;
+		color: black;
 	}
 }
 
