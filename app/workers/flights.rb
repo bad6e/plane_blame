@@ -1,8 +1,8 @@
 class Flights
   attr_reader :user, :worker, :airport_code, :airline_code
 
-  def initialize(airport_code, airline_code)
-    @worker = FlightWorker.new(airport_code, airline_code).hit_api
+  def initialize(airport_code, airline_code, time_zone)
+    @worker = FlightWorker.new(airport_code, airline_code).api_offset_time(time_zone)
     @airport_code = airport_code
     @airline_code = airline_code
   end
@@ -44,12 +44,17 @@ class Flights
     Airline.find_by(code: airline_code).id
   end
 
+  def find_airport_id
+    Airport.find_by(code: airport_code).id
+  end
+
   def save
     flatten.each do |r|
       Departure.create(flight_id: r[0],
                        dep_gate_delays: r[1],
                        flight_number: r[2],
-                       airline_id: find_airline_id)
+                       airline_id: find_airline_id,
+                       airport_id: find_airport_id)
     end
   end
 end
