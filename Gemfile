@@ -16,6 +16,7 @@ gem 'rails_12factor'
 gem 'whenever', :require => false
 gem "bootstrap-sass", "~> 3.3.5"
 gem 'newrelic_rpm'
+gem 'responders'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

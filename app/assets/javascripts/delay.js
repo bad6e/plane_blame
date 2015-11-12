@@ -1,7 +1,22 @@
-window.onload = function () {
+$(document).ready(function(){
+  fetchDelays()
+})
+
+  function fetchDelays(){
+    $.ajax({
+      type: 'GET',
+      url: 'https://planeblame.herokuapp.com/api/v1/delays.json',
+      dataType: 'json',
+      success: function(r){
+        gauge(r)
+      }
+    })
+  }
+
+  function gauge(score){
   var gg1 = new JustGage({
     id: "delay",
-    value : 3.5,
+    value : score,
     min: 0,
     max: 4,
     decimals: 1,
@@ -21,5 +36,4 @@ window.onload = function () {
     }],
     counter: true
   });
-};
-
+}
