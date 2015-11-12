@@ -7,7 +7,7 @@
 	var
 	// default settings object.
 	defaults = {
-		label: 'MENU',
+		label: 'PLANE BLAME',
 		duplicate: true,
 		duration: 200,
 		easingOpen: 'swing',
