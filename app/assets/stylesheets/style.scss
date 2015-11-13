@@ -93,6 +93,23 @@ body{
   height: 150px;
 }
 
+.drop_airport {
+	background-color: white;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-top: none;
+	background: #fff;
+	padding: 10px;
+	margin: 0;
+	width: 50%;
+	z-index: 100;
+
+}
+
+.activetrigger:hover {
+	color: #777;
+}
+
 #menu a:active {
 color:#1fcdff;
 }
