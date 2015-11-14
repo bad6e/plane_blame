@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, defaults: {format: :json} do
-      resources :delays, only: [:index]
+      get "/search", to: 'auto_complete#search'
+      get "/total/:id", to: 'dashboard#total'
     end
   end
 end

@@ -67,55 +67,36 @@
   </div>
 </div>
 
-<div class="col-md-offset-3 col-md-6">
-  <div class="row well">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="ex. Denver">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Search!</button>
-        </span>
-      </div>
-    </div>
+<div class="col-md-offset-3 col-md-6 well">
+  <input class='form-control' id="select_origin" placeholder="ex. Denver"/>
+  <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
+</div>
+
+<div class="container">
+  <div class="row" id='airport_name'>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 cBusiness">
-      <h3>Denver International Airport Statistics</h3>
-      <br>
+    <div id='airport_stats_1'>
+    </div>
+    <div id='airport_stats_2'>
+    </div>
+    <div id='airport_stats_3'>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 project">
-      <h3 id="counter"><%= @statistics.total_departures %></h3>
-      <h4>Total Flights</h4>
-    </div>
-    <div class="col-md-4 project">
-      <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
-      <h4>On Time Departures</h4>
-      <p>Last Updated at <%= @statistics.last_updated_at %></p>
-    </div>
-    <div class="col-md-4 project">
-      <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
-      <h4 style="margin-left: 20px;">Late Departures</h4>
+  <div class="row" id='delay_index'>
+    <div id='loaderImg'>
+      <img src="http://jimpunk.net/Loading/wp-content/uploads/loading1.gif" alt=""/>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 cBusiness">
-      <h4><strong>Current Delay Index at Denver International</strong></h4>
-      <div id="delay" class="gauge"></div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12 cBusiness">
       <h4><strong>Percentage of On-Time Departures for each Major Airline.</strong></h4>
@@ -227,6 +208,8 @@
 <h6>*Considered On Time if actual departure is 15 minutes or less from scheduled departure.</h6>
 </div>
 <br>
+<br> -->
 <br>
-
+<br>
 <%= render partial: 'layouts/footer' %>
+

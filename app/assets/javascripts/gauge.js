@@ -1,19 +1,4 @@
-$(document).ready(function(){
-  fetchDelays()
-})
-
-  function fetchDelays(){
-    $.ajax({
-      type: 'GET',
-      url: 'https://planeblame.herokuapp.com/api/v1/delays.json',
-      dataType: 'json',
-      success: function(r){
-        gauge(r)
-      }
-    })
-  }
-
-  function gauge(score){
+function gauge(score){
   var gg1 = new JustGage({
     id: "delay",
     value : score,
@@ -37,3 +22,4 @@ $(document).ready(function(){
     counter: true
   });
 }
+
