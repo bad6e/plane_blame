@@ -1,7 +1,18 @@
 class FlightsPresenter
-  def total_departures
-    Departure.total_departures
+
+  def total_departures(airport_id=1)
+    Airport.find(airport_id).departures.count
   end
+
+  def late_departures(airport_id=1)
+    Airport.find(airport_id).departures.where(["dep_gate_delays > ?", 15]).count
+  end
+
+  def on_time_departures(airport_id=1)
+    Airport.find(airport_id).departures.where(["dep_gate_delays < ?", 15]).count
+  end
+
+
 
   def total_late_departures
     Departure.total_late_flights

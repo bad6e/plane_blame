@@ -3,9 +3,6 @@ class Departure < ActiveRecord::Base
   belongs_to :airport
   validates :flight_id, presence: true, uniqueness: true
 
-  def self.total_departures
-    count
-  end
 
   def self.total_late_flights
     where(["dep_gate_delays > ?", 15]).count

@@ -67,22 +67,10 @@
   </div>
 </div>
 
-
-
-<!-- This is the textfield that will autocomplete. What is displayed here is for the user to see but the data will not go anywhere -->
-
-<!-- This is the hidden textfield that will be given the Persons ID based on who is selected. This value will be sent as a parameter -->
-
-
-
-
-<div class="col-md-offset-3 col-md-6">
-  <div class="row well">
-    <input class='form-control' id="select_origin" placeholder="ex. Denver"/>
-    <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
-  </div>
+<div class="col-md-offset-3 col-md-6 well">
+  <input class='form-control' id="select_origin" placeholder="ex. Denver"/>
+  <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
 </div>
-
 
 <div class="container">
   <div class="row">
@@ -94,20 +82,13 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 project">
-      <h3 id="counter"><%= @statistics.total_departures %></h3>
-      <h4>Total Flights</h4>
-    </div>
-    <div class="col-md-4 project">
-      <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
-      <h4>On Time Departures</h4>
-      <p>Last Updated at <%= @statistics.last_updated_at %></p>
-    </div>
-    <div class="col-md-4 project">
-      <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
-      <h4 style="margin-left: 20px;">Late Departures</h4>
-    </div>
+
+<div class="row" id='airport_stats'>
+
+
+
+
+
   </div>
 </div>
 

@@ -94,16 +94,12 @@ body{
 }
 
 .drop_airport {
-	background-color: white;
 	font-size: 16px;
 	border: 1px solid #ccc;
-	border-top: none;
 	background: #fff;
 	padding: 10px;
-	margin: 0;
+	margin-right: 100px;
 	width: 50%;
-	z-index: 100;
-
 }
 
 .activetrigger:hover {

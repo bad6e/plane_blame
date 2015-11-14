@@ -3,12 +3,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, defaults: {format: :json} do
-      resources :delays, only: [:index]
-      get "/autocomplete", to: 'delays#autocomplete'
-    end
-  end
 
-  resources :dashboard do
-    get :autocomplete_airport_name, :on => :collection
+      resources :delays, only: [:index]
+
+      get "/search", to: 'auto_complete#search'
+
+      get "/totaldepartures/:id", to: 'dashboard#total_departures'
+      get "/ontimedepartures/:id", to: 'dashboard#on_time_departures'
+      get "/latedepartures/:id", to: 'dashboard#late_departures'
+
+    end
   end
 end

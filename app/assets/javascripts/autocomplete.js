@@ -2,7 +2,7 @@ $(document).ready(function(){
   $(function(){
       $('#select_origin').autocomplete({
         minLength: 1,
-        source: 'http://localhost:3000/api/v1/autocomplete',
+        source: 'http://localhost:3000/api/v1/search',
         focus: function(event, ui) {
           $('#select_origin').val(ui.item.name);
           return false;
@@ -10,7 +10,10 @@ $(document).ready(function(){
         select: function(event, ui) {
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
-            return false;
+
+          totalDepartures(ui.item.id);
+          ontimeDepartures(ui.item.id);
+          lateDepartures(ui.item.id);
         }
       })
       .data("uiAutocomplete")._renderItem = function(div, item){
@@ -21,3 +24,6 @@ $(document).ready(function(){
       };
     });
 });
+
+
+
