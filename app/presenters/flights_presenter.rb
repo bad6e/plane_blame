@@ -28,7 +28,7 @@ class FlightsPresenter
   end
 
 
-  def totaL_late_departures_per_airport(airport_id=1)
+  def total_late_departures_per_airport(airport_id=1)
     Airport.find(airport_id).departures.where(["dep_gate_delays > ?", 15]).count
   end
 

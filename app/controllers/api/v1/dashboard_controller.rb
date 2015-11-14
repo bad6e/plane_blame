@@ -14,6 +14,6 @@ class Api::V1::DashboardController < ApplicationController
   end
 
   def late_departures
-    respond_with FlightsPresenter.new.totaL_late_departures_per_airport(params[:id])
+    respond_with FlightsPresenter.new.total_late_departures_per_airport(params[:id])
   end
 end

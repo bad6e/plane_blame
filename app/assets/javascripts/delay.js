@@ -1,19 +1,17 @@
-$(document).ready(function(){
-  fetchDelays()
-})
+function fetchDelays(id){
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:3000/api/v1/delays/' + id,
+    dataType: 'json',
+    success: function(response){
+      $('#loaderImg').hide();
+      $('#delay_index').html("<div class='col-md-12 cBusiness'><h4><strong>Current Delay Index</strong></h4><div id='delay' class='gauge'></div></div>")
+      gauge(response)
+    }
+  })
+}
 
-  function fetchDelays(){
-    $.ajax({
-      type: 'GET',
-      url: 'https://planeblame.herokuapp.com/api/v1/delays.json',
-      dataType: 'json',
-      success: function(r){
-        gauge(r)
-      }
-    })
-  }
-
-  function gauge(score){
+function gauge(score){
   var gg1 = new JustGage({
     id: "delay",
     value : score,
@@ -37,3 +35,4 @@ $(document).ready(function(){
     counter: true
   });
 }
+

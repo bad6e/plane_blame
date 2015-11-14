@@ -1,4 +1,5 @@
 $(document).ready(function(){
+   $('#loaderImg').hide();
   $(function(){
       $('#select_origin').autocomplete({
         minLength: 1,
@@ -8,12 +9,14 @@ $(document).ready(function(){
           return false;
         },
         select: function(event, ui) {
+          $('#loaderImg').show();
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
             airportName(ui.item.id);
             totalDepartures(ui.item.id);
             ontimeDepartures(ui.item.id);
             lateDepartures(ui.item.id);
+            fetchDelays(ui.item.id);
 
         }
       })
