@@ -12,12 +12,7 @@ $(document).ready(function(){
           $('#loaderImg').show();
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
-            // airportName(ui.item.id);
-            totalDepartures(ui.item.id);
-            // ontimeDepartures(ui.item.id);
-            // lateDepartures(ui.item.id);
-            // fetchDelays(ui.item.id);
-
+            airportInformation(ui.item.id);
         }
       })
       .data("uiAutocomplete")._renderItem = function(div, item){
