@@ -1,5 +1,9 @@
 class FlightsPresenter
 
+  def airport_name(airport_id=1)
+    Airport.find(airport_id).name
+  end
+
   def total_departures(airport_id=1)
     Airport.find(airport_id).departures.count
   end
