@@ -6,14 +6,14 @@ class Api::V1::DashboardController < ApplicationController
   end
 
   def total_departures
-    respond_with FlightsPresenter.new.total_departures(params[:id])
-  end
-
-  def late_departures
-    respond_with FlightsPresenter.new.late_departures(params[:id])
+    respond_with FlightsPresenter.new.total_departures_per_airport(params[:id])
   end
 
   def on_time_departures
-    respond_with FlightsPresenter.new.on_time_departures(params[:id])
+    respond_with FlightsPresenter.new.total_on_time_departures_per_airport(params[:id])
+  end
+
+  def late_departures
+    respond_with FlightsPresenter.new.totaL_late_departures_per_airport(params[:id])
   end
 end
