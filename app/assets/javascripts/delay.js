@@ -1,9 +1,12 @@
 function fetchDelays(id){
+
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:3000/api/v1/delays/' + id,
+    url: 'http://localhost:3000/api/v1/total/' + id,
     dataType: 'json',
     success: function(response){
+       debugger
+
       $('#loaderImg').hide();
       $('#delay_index').html("<div class='col-md-12 cBusiness'><h4><strong>Current Delay Index</strong></h4><div id='delay' class='gauge'></div></div>")
       gauge(response)

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get "/ontimedepartures/:id", to: 'dashboard#on_time_departures'
       get "/latedepartures/:id", to: 'dashboard#late_departures'
       get "/delays/:id", to: 'delays#delays'
+      get "/total/:id", to: 'dashboard#total'
 
     end
   end
