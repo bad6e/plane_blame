@@ -33,12 +33,6 @@ class FlightsPresenter
   end
 
 
-
-
-
-
-
-
   def airline_on_time_percentage(airline_id)
     Departure.total_on_time_percentage(airline_id)
   end

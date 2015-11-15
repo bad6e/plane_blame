@@ -21,6 +21,23 @@ class Api::V1::DashboardController < ApplicationController
     DelayIndexService.new(find_airport_code(params[:id])).normalized_score
   end
 
+  def airline_ids
+    [1,2,3,4,5,6,7,8]
+  end
+
+  def on_time_percentage
+    airline_ids.map {|r| Airport.find(params[:id]).departures.total_on_time_percentage(r)}
+  end
+
+  def number_of_flights
+    airline_ids.map {|r| Airport.find(params[:id]).departures.total_flights_per_airline(r)}
+  end
+
+  def airline_name
+    airline_ids.map{|r| Airline.find(r).name}
+  end
+
+
   def sw_on_time_percentage
     Airport.find(params[:id]).departures.total_on_time_percentage(1)
   end
@@ -109,6 +126,9 @@ class Api::V1::DashboardController < ApplicationController
          on_time_departures: on_time_departures,
          late_departures: late_departures,
          last_updated: last_update,
+         on_time_percentage: on_time_percentage,
+         number_of_flights: number_of_flights,
+         airline_name: airline_name,
          # delay_index: delays,
 
          sw_on_time_percentage: sw_on_time_percentage,
