@@ -1,5 +1,4 @@
 var boom = function(percent) {
-    console.log(percent, 'percent in boom')
     var chart = $('.chart'),
         chartNr = $('.chart-content'),
         chartParent = chart.parent(),
