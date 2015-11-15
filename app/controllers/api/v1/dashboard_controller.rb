@@ -21,6 +21,38 @@ class Api::V1::DashboardController < ApplicationController
     DelayIndexService.new(find_airport_code(params[:id])).normalized_score
   end
 
+  def sw_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(1)
+  end
+
+  def ua_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(2)
+  end
+
+  def frontier_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(3)
+  end
+
+  def delta_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(4)
+  end
+
+  def american_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(5)
+  end
+
+  def jetblue_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(6)
+  end
+
+  def spirit_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(7)
+  end
+
+  def virgin_on_time_percentage
+    Airport.find(params[:id]).departures.total_on_time_percentage(8)
+  end
+
   def find_airport_code(airport_id)
     Airport.find(airport_id).code
   end
@@ -32,7 +64,15 @@ class Api::V1::DashboardController < ApplicationController
          total_departures: total_departures,
          on_time_departures: on_time_departures,
          late_departures: late_departures,
-         delay_index: delays
+         # delay_index: delays,
+         sw_on_time_percentage: sw_on_time_percentage,
+         ua_on_time_percentage: ua_on_time_percentage,
+         frontier_on_time_percentage: frontier_on_time_percentage,
+         delta_on_time_percentage: delta_on_time_percentage,
+         american_on_time_percentage: american_on_time_percentage,
+         jetblue_on_time_percentage: jetblue_on_time_percentage,
+         spirit_on_time_percentage: spirit_on_time_percentage,
+         virgin_on_time_percentage: virgin_on_time_percentage,
         }
       }
     render json: to_json
