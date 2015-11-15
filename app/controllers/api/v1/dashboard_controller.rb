@@ -92,6 +92,10 @@ class Api::V1::DashboardController < ApplicationController
     Airport.find(params[:id]).departures.total_flights_per_airline(8)
   end
 
+  def last_update
+    Airport.find(params[:id]).departures.last_updated_at
+  end
+
 
   def find_airport_code(airport_id)
     Airport.find(airport_id).code
@@ -104,6 +108,7 @@ class Api::V1::DashboardController < ApplicationController
          total_departures: total_departures,
          on_time_departures: on_time_departures,
          late_departures: late_departures,
+         last_updated: last_update,
          # delay_index: delays,
 
          sw_on_time_percentage: sw_on_time_percentage,
