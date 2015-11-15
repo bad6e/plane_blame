@@ -52,7 +52,7 @@ class Api::V1::DashboardController < ApplicationController
          on_time_percentage: on_time_percentage,
          number_of_flights: number_of_flights,
          airline_names: airline_names,
-         delay_index: delays,
+         # delay_index: delays,
         }
       }
     render json: to_json
