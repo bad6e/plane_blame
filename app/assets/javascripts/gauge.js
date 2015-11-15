@@ -22,4 +22,3 @@ function gauge(score){
     counter: true
   });
 }
-

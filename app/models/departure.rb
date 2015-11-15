@@ -15,8 +15,6 @@ class Departure < ActiveRecord::Base
     where(["dep_gate_delays > ?", 15]).count
   end
 
-
-
   def self.total_on_time_number(airline_id)
     where("dep_gate_delays < ? AND airline_id = ?", 15, airline_id).count
   end
