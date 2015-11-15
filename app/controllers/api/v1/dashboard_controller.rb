@@ -29,7 +29,6 @@ class Api::V1::DashboardController < ApplicationController
     Airport.find(params[:id]).departures.total_flights_per_airline(1)
   end
 
-
   def ua_on_time_percentage
     Airport.find(params[:id]).departures.total_on_time_percentage(2)
   end
@@ -105,7 +104,7 @@ class Api::V1::DashboardController < ApplicationController
          total_departures: total_departures,
          on_time_departures: on_time_departures,
          late_departures: late_departures,
-         delay_index: delays,
+         # delay_index: delays,
 
          sw_on_time_percentage: sw_on_time_percentage,
          sw_number_flights: sw_number_flights,
