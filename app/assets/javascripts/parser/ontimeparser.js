@@ -9,13 +9,3 @@ var ontimeParser = function(response) {
   }
   $('#disclaimer').html("<h6>*Considered On Time if actual departure is 15 minutes or less from scheduled departure.</h6>")
 }
-
-
-
-
-
-
-
-
-
-
