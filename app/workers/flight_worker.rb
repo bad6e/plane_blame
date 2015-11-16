@@ -10,7 +10,7 @@ class FlightWorker
   end
 
   def offset
-    {ec: 1, cc: 0, mt: -1, pc: -2}
+    {ec: -5, cc: -6, mt: -7, pc: -8}
   end
 
   def api_offset_time(time_zone)
@@ -19,7 +19,7 @@ class FlightWorker
   end
 
   def api(offset_time)
-    parse(connection.get("v2/json/airport/status/#{airport_code}/dep/#{offset_time.year}/#{offset_time.month}/#{offset_time.day}/#{offset_time.hour}?appId=#{@appId}&appKey=#{@appKey}&utc=false&numHours=1&carrier=#{airline_code}"))
+    parse(connection.get("v2/json/airport/status/#{airport_code}/dep/#{offset_time.year}/#{offset_time.month}/#{offset_time.day}/#{offset_time.hour}?appId=#{@appId}&appKey=#{@appKey}&utc=false&numHours=6&carrier=#{airline_code}"))
   end
 
   private
