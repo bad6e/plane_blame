@@ -1,12 +1,15 @@
 desc "update delays"
 task :all => :environment do
-  puts "Updating All"
-  Rake::Task['atl'].execute
-  Rake::Task['dallas'].execute
-  Rake::Task['dca'].execute
-  Rake::Task['denver'].execute
-  Rake::Task['dulles'].execute
-  Rake::Task['la'].execute
-  Rake::Task['nyla'].execute
-  Rake::Task['ohare'].execute
+  times = [0,6,12,18]
+  if times.include?(Time.now.hour)
+    Rake::Task['atl'].execute
+    Rake::Task['dallas'].execute
+    Rake::Task['dca'].execute
+    Rake::Task['denver'].execute
+    Rake::Task['dulles'].execute
+    Rake::Task['la'].execute
+    Rake::Task['nyla'].execute
+    Rake::Task['ohare'].execute
+  else
+  end
 end
