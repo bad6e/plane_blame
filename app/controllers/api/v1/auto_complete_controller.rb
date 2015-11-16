@@ -3,7 +3,7 @@ class Api::V1::AutoCompleteController < ApplicationController
 
   def search
     if params[:term]
-      @airport = Airport.order(:name).where('name LIKE ?', "%#{params[:term].downcase}%" )
+      @airport = Airport.order(:name).where('name LIKE ?', "%#{params[:term]}%" )
     else
       @airport = Airport.all
     end
