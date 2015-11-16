@@ -82,10 +82,69 @@ body{
 	margin-left: 180px;
 }
 
-
 #plane_blame {
 	margin-left: 50px;
 }
+
+// .ui-autocomplete {
+// 	left:295px !important;
+// }
+
+@media screen and (max-width: 1680px) {
+	.ui-autocomplete {
+		left:350px !important;
+	}
+
+}
+
+@media screen and (max-width: 1440px) {
+	.ui-autocomplete {
+		left:295px !important;
+	}
+
+}
+
+@media screen and (max-width: 1280px) {
+	.ui-autocomplete {
+		left:255px !important;
+	}
+
+}
+
+@media screen and (max-width: 1000px) {
+	.ui-autocomplete {
+		left:195px !important;
+	}
+
+}
+
+@media screen and (max-width: 900px) {
+	.ui-autocomplete {
+		left:170px !important;
+	}
+
+}
+
+// @media screen and (max-width: 845px) {
+// 	.ui-autocomplete {
+// 		width:auto !important;
+// 		left:170px !important;
+// 	}
+
+// 	.drop_airport {
+// 		width: 884px;
+// 	}
+
+// }
+
+// @media screen and (max-width: 768px) {
+// 	.ui-autocomplete {
+// 		left:100px !important;
+// 	}
+// }
+
+
+
 
 .gauge {
 	align: center;
@@ -97,7 +156,7 @@ body{
 	font-size: 16px;
 	border: 1px solid #ccc;
 	background: #fff;
-	padding: 10px;
+	padding: 7px;
 	margin-right: 100px;
 	width: 50%;
 }
@@ -231,7 +290,6 @@ border: none;
 	.about p{
 		text-align: justify;
 	}
-
 
 }
 @media screen and (max-width: 1229px){
