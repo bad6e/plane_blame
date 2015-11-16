@@ -58,6 +58,5 @@ RSpec.describe Departure, type: :model do
 
   it "returns the last updated_at" do
     expect(Departure.last_updated_at).to eq(Time.now.strftime("%A, %B %d, %Y at %I:%M%p"))
-
   end
 end
