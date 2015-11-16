@@ -1,3 +1,0 @@
-class DeparturesController < ApplicationController
-
-end
