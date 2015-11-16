@@ -18,5 +18,4 @@
 /coverage/
 
 /spec/fixtures/
-/spec/workers/flight_worker_spec.rb
 
