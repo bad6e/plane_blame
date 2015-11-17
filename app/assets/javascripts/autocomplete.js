@@ -3,16 +3,18 @@ $(document).ready(function(){
   $(function(){
       $('#select_origin').autocomplete({
         minLength: 1,
-        source: 'https://planeblame.herokuapp.com/api/v1/search',
+        source: 'http://localhost:3000/api/v1/search',
         focus: function(event, ui) {
           $('#select_origin').val(ui.item.name);
           return false;
         },
         select: function(event, ui) {
+          console.log('in the select')
           $('#loaderImg').show();
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
             airportInformation(ui.item.id);
+          $('#all_html').hide();
         }
       })
       .data("uiAutocomplete")._renderItem = function(div, item){
