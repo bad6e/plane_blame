@@ -42,6 +42,7 @@ class Api::V1::DashboardController < ApplicationController
   end
 
   def total
+    sleep(1.5)
      to_json =
       {airport_name:
         {name: airport_name,
