@@ -38,4 +38,20 @@ RSpec.describe Departure, type: :model do
   it "returns the last updated at" do
     expect(FlightsPresenter.new.last_updated_at).to eq(Time.now.strftime("%A, %B %d, %Y at %I:%M%p"))
   end
+
+  it "returns an array of all the airline names" do
+    expect(FlightsPresenter.new.airline_names).to eq(['Southwest Airlines'])
+  end
+
+  it "returns an array of the total on-time percetange for each airline " do
+    expect(FlightsPresenter.new.total_percentage).to eq([50.0])
+  end
+
+  it "returns an array of the airline name and it's total percentage of on-time flights" do
+    expect(FlightsPresenter.new.total_percentage_and_name).to eq([[50.0, 'Southwest Airlines']])
+  end
+
+  it "returns all the airline ids" do
+    expect(FlightsPresenter.new.airline_ids).to eq([@airline_one.id])
+  end
 end

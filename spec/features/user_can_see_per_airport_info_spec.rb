@@ -1,7 +1,7 @@
 require "rails_helper"
-feature "visitor comes to home page" do
+RSpec.describe Departure, type: :feature do
 
-  before(:each) do
+    before(:each) do
     @airport_one   = Airport.create(name: "Denver International",
                                     code: "DEN")
 
@@ -56,17 +56,26 @@ feature "visitor comes to home page" do
 
   end
 
-  scenario "user sees total PlaneBlame Stats" do
+  it "user sees total PlaneBlame Stats" do
     visit root_path
     expect(page).to have_content(6)
     expect(page).to have_content(3)
     expect(page).to have_content(3)
-    expect(page).to have_content(Time.now.strftime("%A, %B %d, %Y at %I:%M%p"))
 
     within('#search_field') do
       fill_in "search", with: @airport_one.name
     end
+  end
 
-    expect(page).to have_css("img[src*='http://jimpunk.net/Loading/wp-content/uploads/loading1.gif']")
+  xit "user can see the best to worst airlines", js: true do
+    visit root_path
+    click_button "Click Here for the Percentages"
+
+    expect(page).to have_content(@airline_one.name)
+    expect(page).to have_content(@airline_two.name)
+    expect(page).to have_content(@airline_three.name)
+    expect(page).to have_content(@airline_four.name)
+    expect(page).to have_content(100)
+    expect(page).to have_content(0)
   end
 end

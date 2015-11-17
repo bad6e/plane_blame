@@ -420,10 +420,17 @@ border: none;
 		color: black;
 	}
 
-	#welcome_to{
-		margin-left:200px;
-	}
+#welcome_to {
+	margin-left:200px;
+}
 
+#stat_button {
+	font-family: 'Roboto', 'sans-serif';
+}
+
+#on_time {
+	text-align: right;
+}
 
 .cBusiness{
 	margin-top: 25px;
