@@ -14,7 +14,6 @@ $(document).ready(function(){
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
             airportInformation(ui.item.id);
-          $('#all_html').hide();
         }
       })
       .data("uiAutocomplete")._renderItem = function(div, item){
