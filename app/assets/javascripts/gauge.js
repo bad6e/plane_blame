@@ -3,7 +3,7 @@ function gauge(score){
     id: "delay",
     value : score,
     min: 0,
-    max: 4,
+    max: 5,
     decimals: 1,
     gaugeWidthScale: 0.6,
     customSectors: [{
@@ -13,11 +13,11 @@ function gauge(score){
     },{
       color : "#FFFF00",
       lo : 1.51,
-      hi : 3
+      hi : 3.5
     }, {
       color : "#CC3300",
-      lo : 3,
-      hi : 4
+      lo : 3.51,
+      hi : 5
     }],
     counter: true
   });

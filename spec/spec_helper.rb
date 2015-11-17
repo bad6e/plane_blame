@@ -24,4 +24,8 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
+
+  def response_data
+    JSON.parse(response.body)
+  end
 end
