@@ -13,28 +13,28 @@ RSpec.describe "Flight Stats API", type: :request do
   it "returns all flights ids for an airline" do
     VCR.use_cassette("flights_api") do
       service = Flights.new('DEN', 'WN', :mt).flight_ids
-      expect(service.first).to eq (629023940)
+      expect(service.first).to eq (629023960)
     end
   end
 
   it "returns all gate delays for an airline" do
     VCR.use_cassette("flights_api") do
       service = Flights.new('DEN', 'WN', :mt).gate_delays
-      expect(service.first).to eq ({:departureGateDelayMinutes=>31, :arrivalGateDelayMinutes=>35, :arrivalRunwayDelayMinutes=>1})
+      expect(service.first).to eq ({:departureGateDelayMinutes=>72, :arrivalGateDelayMinutes=>130})
     end
   end
 
   it "returns all flights numbers for an airline" do
     VCR.use_cassette("flights_api") do
       service = Flights.new('DEN', 'WN', :mt).flight_number
-      expect(service.first).to eq ("387")
+      expect(service.first).to eq ("501")
     end
   end
 
   it "saves all the flights" do
     VCR.use_cassette("flights_api") do
       service = Flights.new('DEN', 'WN', :mt).save
-      expect(service.first).to eq ([629023940, 31, "387"])
+      expect(service.first).to eq ([629023960, 72, "501"])
     end
   end
 end
