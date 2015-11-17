@@ -1,7 +1,6 @@
 require "rails_helper"
 RSpec.describe Departure, type: :feature do
-
-    before(:each) do
+  before(:each) do
     @airport_one   = Airport.create(name: "Denver International",
                                     code: "DEN")
 
@@ -9,13 +8,13 @@ RSpec.describe Departure, type: :feature do
                                     code: "WN")
 
     @airline_two    = Airline.create(name: "American Airlines",
-                                   code: "AA")
+                                     code: "AA")
 
     @airline_three  = Airline.create(name: "Frontier",
-                                   code: "F9")
+                                     code: "F9")
 
     @airline_four   = Airline.create(name: "United Airlines",
-                                   code: "UA")
+                                     code: "UA")
 
     @departure_one = Departure.create(dep_gate_delays: 10 ,
                     airline_id: @airline_one.id,
@@ -67,7 +66,7 @@ RSpec.describe Departure, type: :feature do
     end
   end
 
-  xit "user can see the best to worst airlines", js: true do
+  it "user can see the best to worst airlines" do
     visit root_path
     click_button "Click Here for the Percentages"
 

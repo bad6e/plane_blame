@@ -41,6 +41,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'selenium-webdriver'
   gem 'simplecov', :require => false
+  gem 'timecop'
 end
 
 group :development do
