@@ -1,7 +1,6 @@
 require "rails_helper"
 RSpec.describe Departure, type: :feature do
-
-    before(:each) do
+  before(:each) do
     @airport_one   = Airport.create(name: "Denver International",
                                     code: "DEN")
 
@@ -67,7 +66,7 @@ RSpec.describe Departure, type: :feature do
     end
   end
 
-  xit "user can see the best to worst airlines", js: true do
+  it "user can see the best to worst airlines", js: true do
     visit root_path
     click_button "Click Here for the Percentages"
 
