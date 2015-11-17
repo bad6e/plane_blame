@@ -1,5 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Airline, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:airline_one) {
+    Airline.create(name: "Southwest Airlines", code: "WN")
+  }
+
+  let(:airline_two) {
+    Issue.create(name: "American Airlines", code: "AA")
+  }
+
+  it "is valid" do
+    expect(airline_one).to be_valid
+  end
+
+  it "is invalid without a name" do
+    airline_one.name = nil
+    expect(airline_one).to be_invalid
+  end
 end
