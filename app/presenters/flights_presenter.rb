@@ -20,7 +20,7 @@ class FlightsPresenter
   end
 
   def total_percentage
-    airline_ids.map {|r| Departure.total_on_time_percentage(r)}
+    airline_ids.map {|r| Departure.total_on_time_percentage(r).round}
   end
 
   def total_percentage_and_name
