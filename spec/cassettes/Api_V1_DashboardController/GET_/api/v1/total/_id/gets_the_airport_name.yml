@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/DEN?appId=67ccf356&appKey=c18b17448e980aded62ad66fd5d72244
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.1.19
+      Date:
+      - Tue, 17 Nov 2015 21:52:40 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request":{"airportCodes":[{"requestedCode":"DEN","fsCode":"DEN"}],"codeType":{},"url":"https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/DEN","classification":{},"score":{}},"delayIndexes":[{"airport":{"fs":"DEN","iata":"DEN","icao":"KDEN","faa":"DEN","name":"Denver
+        International Airport","street1":"8500 Pena Boulevard","city":"Denver","cityCode":"DEN","stateCode":"CO","postalCode":"80249-6340","countryCode":"US","countryName":"United
+        States","regionName":"North America","timeZoneRegionName":"America/Denver","weatherZone":"COZ040","localTime":"2015-11-17T14:52:40.503","utcOffsetHours":-7.0,"latitude":39.851382,"longitude":-104.673098,"elevationFeet":5389,"classification":1,"active":true,"weatherUrl":"https://api.flightstats.com/flex/weather/rest/v1/json/all/DEN?codeType=fs"},"rawScore":139.18,"normalizedScore":5.0,"dateStart":"2015-11-17T21:00:00.000Z","dateEnd":"2015-11-18T00:00:00.000Z","flights":126,"observations":122,"canceled":1,"onTime":67,"delayed15":18,"delayed30":7,"delayed45":29,"delta":0.0}]}'
+    http_version: 
+  recorded_at: Tue, 17 Nov 2015 06:00:00 GMT
+recorded_with: VCR 2.9.3

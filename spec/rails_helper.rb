@@ -8,8 +8,9 @@ require 'rspec/rails'
 require 'capybara/rails'
 require "capybara/rspec"
 require 'vcr'
-require 'webmock/rspec'
+require 'webmock'
 ActiveRecord::Migration.maintain_test_schema!
+
 
 RSpec.configure do |config|
 
@@ -38,11 +39,17 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.infer_spec_type_from_file_location!
+
+
 end
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-  c.hook_into :webmock
-  c.allow_http_connections_when_no_cassette = true
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  allow_http_connections_when_no_cassette = true
 end
+
+
+
 
