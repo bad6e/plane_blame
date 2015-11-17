@@ -24,7 +24,7 @@ class Departure < ActiveRecord::Base
   end
 
   def self.total_on_time_percentage(airline_id)
-    (((total_on_time_number_per_airline(airline_id).to_f)/(total_flights_per_airline(airline_id).to_f)) * 100).round
+    ((total_on_time_number_per_airline(airline_id).to_f)/(total_flights_per_airline(airline_id).to_f)) * 100
   end
 
   def self.last_updated_at
