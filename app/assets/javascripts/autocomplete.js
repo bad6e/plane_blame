@@ -1,5 +1,6 @@
 $(document).ready(function(){
    $('#loaderImg').hide();
+
   $(function(){
       $('#select_origin').autocomplete({
         minLength: 1,
