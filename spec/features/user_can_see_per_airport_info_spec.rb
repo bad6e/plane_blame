@@ -56,10 +56,7 @@ RSpec.describe Departure, type: :feature do
 
   it "user sees total PlaneBlame Stats" do
     visit root_path
-    expect(page).to have_content(6)
-    expect(page).to have_content(2)
-    expect(page).to have_content(4)
-
+    expect(page).to have_content(000)
     within('#search_field') do
       fill_in "search", with: @airport_one.name
     end
