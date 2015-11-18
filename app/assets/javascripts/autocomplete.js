@@ -9,7 +9,6 @@ $(document).ready(function(){
           return false;
         },
         select: function(event, ui) {
-          console.log('in the select')
           $('#loaderImg').show();
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
