@@ -39,16 +39,16 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 project">
-      <h3 id="counter"><%= @statistics.total_departures %></h3>
+    <div class="col-md-4 project odometer1">
+      <h3 id="odometer" class="odometer">000</h3>
       <h4>Total Flights Tracked</h4>
     </div>
-    <div class="col-md-4 project">
-      <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
+    <div class="col-md-4 project odometer2">
+      <h3 id="odometer" class="odometer">000</h3>
       <h4>Total On Time Departures</h4>
     </div>
-    <div class="col-md-4 project">
-      <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
+    <div class="col-md-4 project odometer3">
+      <h3 id="odometer" class="odometer" style="margin-left: 20px;">000</h3>
       <h4 style="margin-left: 20px;">Total Late Departures</h4>
     </div>
   </div>
@@ -56,7 +56,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-offset-3 col-md-6 cBusiness">
-      <h3>Major Airlines We Cover</h3>
+      <h3>Major Airlines We Monitor</h3>
     </div>
   </div>
 </div>
