@@ -16,7 +16,6 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row wrap">
       <div class="col-md-12 gallery">
@@ -30,7 +29,6 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-12 cBusiness">
@@ -39,7 +37,6 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-4 project">
@@ -50,49 +47,44 @@
       <h3 id="counter1"><%= @statistics.total_on_time_departures %></h3>
       <h4>Total On Time Departures</h4>
     </div>
-
     <div class="col-md-4 project">
       <h3 id="counter2" style="margin-left: 20px;"><%= @statistics.total_late_departures %></h3>
       <h4 style="margin-left: 20px;">Total Late Departures</h4>
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-offset-3 col-md-6 cBusiness">
-      <h3>The US's Best to Worst Airlines</h3>
+      <h3>Major Airlines We Cover</h3>
     </div>
   </div>
 </div>
-
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <br>
-      <button class="btn btn-lg btn-default btn-home" id='stat_button' type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Click Here for the Percentages</button>
+      <div id="sorts" class="button-group">
+        <button class="button btn btn-md btn-default btn-home" data-sort-by="name">Airline</button>
+        <button class="button btn btn-md btn-default btn-home" data-sort-by="number">On-time</button>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="collapse" id="collapseExample">
-  <div class="container col-md-offset-4 col-md-4">
-    <br>
-    <table class="table table-condensed table-hover">
-      <tr>
-        <th>Airline</th>
-        <th id='on_time'>On-Time Percentage<th>
-      </tr>
-      <% @statistics.total_percentage_and_name.each do |name| %>
-        <tr>
-          <td><%= name[1] %></td>
-          <td align='right'><%= name[0] %>%</td>
+<br><br>
+<div class='container'>
+  <div class='col-md-12'>
+    <div class="grid">
+    <% @statistics.total_percentage_and_name.each_with_index do |name, index| %>
+      <div class="element-item" data-category="transition">
+        <div><%= image_tag("airline-#{index}.png", class: "image_aa")%></div>
+        <h3 class="name" style="display: none;"><%= name[1] %></h3>
+        <p class="number"><%= name[0] %>% On-Time</p>
+      </div>
       <% end %>
-      </tr>
-    </table>
+    </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-12 cBusiness">
@@ -101,12 +93,10 @@
     </div>
   </div>
 </div>
-
 <div class="col-sm-offset-3 col-sm-6 well" id='search_field'><a name='search'></a>
   <input name="search" class='form-control' id="select_origin" placeholder="ex. Denver International Airport"/>
   <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
 </div>
-
 <div class="container col-md-12 cBusiness">
   <div id='loaderImg'>
     <br><br>
@@ -114,7 +104,6 @@
     <br><br>
   </div>
 </div>
-
 <div id='all_html'>
   <div class="container">
     <div class="row" >
@@ -122,7 +111,6 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class='col-md-4 project' id='airport_stats_1'>
@@ -133,22 +121,18 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row" id='delay_index'>
     </div>
   </div>
-
   <div class="container" >
     <div class='row'>
       <div class='col-md-12 cBusiness' id='airline_title'>
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
-
       <div class="col-md-3 bar" id="airline-0">
       </div>
       <div class="col-md-3 bar" id="airline-1">
@@ -165,16 +149,12 @@
       </div>
        <div class="col-md-3 bar" id="airline-7">
       </div>
-
     </div>
   </div>
   <br>
-
   <div class='container disclaimer' id="disclaimer">
   </div>
 </div>
-
 <br>
 <br>
-
 <%= render partial: 'layouts/footer' %>
