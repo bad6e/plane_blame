@@ -86,6 +86,52 @@ body{
 	margin-left: 50px;
 }
 
+.grid {
+  max-width: 1200px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  clear: both;
+}
+
+.element-item {
+	border: 1px solid #333;
+  position: relative;
+
+  width: 128px;
+  height: 120px;
+  margin: 5px;
+  padding: 10px;
+  box-shadow: 4px 4px 2px #D0D0D0;
+  color: #262524;
+}
+
+
+
+.element-item .name {
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.element-item .number {
+  position: absolute;
+  font-size: 12px;
+  align: center;
+  left: 28px;
+  top: 90px;
+}
+
+.image_aa {
+	padding-left-left: 2px;
+}
+
 // .ui-autocomplete {
 // 	left:295px !important;
 // }

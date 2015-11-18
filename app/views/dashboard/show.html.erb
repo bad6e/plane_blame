@@ -61,12 +61,37 @@
 <div class="container">
   <div class="row">
     <div class="col-md-offset-3 col-md-6 cBusiness">
-      <h3>The US's Best to Worst Airlines</h3>
+      <h3>Major Airlines We Cover</h3>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div id="sorts" class="button-group">
+        <button class="button btn btn-lg btn-default btn-home" data-sort-by="name">Airline</button>
+        <button class="button btn btn-lg btn-default btn-home" data-sort-by="number">On-time</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class='container'>
+  <div class='col-md-12'>
+    <div class="grid">
+    <% @statistics.total_percentage_and_name.each_with_index do |name, index| %>
+      <div class="element-item" data-category="transition">
+        <div><%= image_tag("airline-#{index}.png", class: "image_aa")%></div>
+        <h3 class="name" style="display: none;"><%= name[1] %></h3>
+        <p class="number"><%= name[0] %>% On-Time</p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
       <br>
@@ -75,7 +100,7 @@
   </div>
 </div>
 
-<div class="collapse" id="collapseExample">
+<<!-- div class="collapse" id="collapseExample">
   <div class="container col-md-offset-4 col-md-4">
     <br>
     <table class="table table-condensed table-hover">
@@ -91,7 +116,7 @@
       </tr>
     </table>
   </div>
-</div>
+</div> -->
 
 <div class="container">
   <div class="row">
