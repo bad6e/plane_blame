@@ -75,9 +75,9 @@
 <div class='container'>
   <div class='col-md-12'>
     <div class="grid">
-    <% @statistics.total_percentage_and_name.each_with_index do |name, index| %>
+    <% @statistics.total_percentage_and_name.each do |name| %>
       <div class="element-item" data-category="transition">
-        <div><%= image_tag("airline-#{index}.png", class: "image_aa")%></div>
+        <div><%= image_tag("#{name[1].parameterize}.png", class: "image_aa")%></div>
         <h3 class="name"><%= name[1] %></h3>
         <p class="number"><%= name[0] %>% On-Time</p>
       </div>
