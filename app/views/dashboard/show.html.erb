@@ -78,7 +78,7 @@
     <% @statistics.total_percentage_and_name.each_with_index do |name, index| %>
       <div class="element-item" data-category="transition">
         <div><%= image_tag("airline-#{index}.png", class: "image_aa")%></div>
-        <h3 class="name" style="display: none;"><%= name[1] %></h3>
+        <h3 class="name"><%= name[1] %></h3>
         <p class="number"><%= name[0] %>% On-Time</p>
       </div>
       <% end %>
