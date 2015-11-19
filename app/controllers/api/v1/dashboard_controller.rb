@@ -29,6 +29,10 @@ class Api::V1::DashboardController < ApplicationController
     DelayIndexService.new(find_airport_code(airport_id)).normalized_score
   end
 
+  def day_length
+    Airport.find(airport_id).departures.day_length
+  end
+
   def airline_ids
     Airline.pluck(:id)
   end
@@ -66,6 +70,7 @@ class Api::V1::DashboardController < ApplicationController
          number_of_flights: number_of_flights,
          airline_names: airline_names,
          delay_index: delays,
+         day_length: day_length,
         }
       }
     render json: to_json

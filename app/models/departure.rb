@@ -30,4 +30,8 @@ class Departure < ActiveRecord::Base
   def self.last_updated_at
     last.created_at.in_time_zone('America/Denver').strftime("%A, %B %d, %Y at %I:%M%p")
   end
+
+  def self.day_length
+    ((last.updated_at - first.updated_at) / 1.day).round
+  end
 end
