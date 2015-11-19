@@ -24,7 +24,7 @@ class FlightsPresenter
   end
 
   def total_percentage_and_name
-    total_percentage.zip(airline_names).sort { |x,y| y <=> x }
+    total_percentage.zip(airline_names)
   end
 
   def airline_ids
