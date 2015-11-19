@@ -35,9 +35,6 @@ RSpec.describe Departure, type: :model do
                     flight_id: 1113,
                     flight_number: '1236',
                     created_at: Timecop.freeze(2015, 11, 20, hour=1, minute=0, second=0))
-
-
-
   end
 
   it "is valid" do
