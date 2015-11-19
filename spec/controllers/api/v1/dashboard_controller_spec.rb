@@ -112,6 +112,13 @@ RSpec.describe Api::V1::DashboardController, type: :controller, vcr: true do
         expect(response_data['airport_name']['airline_names']).to eq(['Southwest Airlines','Frontier Airlines'])
       end
     end
+
+    it "returns the amount of days between the first departure and last departure per airport" do
+      Timecop.freeze(2015, 11, 17, hour=6) do
+        get :total, format: :json, id: @airport_one.id
+        expect(response_data['airport_name']['day_length']).to eq(0)
+      end
+    end
   end
 
   describe "GET /api/v1/all" do
