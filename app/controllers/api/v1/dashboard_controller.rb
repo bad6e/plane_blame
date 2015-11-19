@@ -77,7 +77,6 @@ class Api::V1::DashboardController < ApplicationController
   end
 
   def total_flights
-    sleep(1.2)
     to_json =
     {total_flights:
       {total: total_departures_all,
