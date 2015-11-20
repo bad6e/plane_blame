@@ -1,5 +1,5 @@
 desc "update delays"
-task :all => :environment do
+task :explode => :environment do
   times = [0,6,12,18]
   if times.include?(Time.now.hour)
     Rake::Task['atl'].execute
