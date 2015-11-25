@@ -10,6 +10,7 @@ task :explode => :environment do
     Rake::Task['la'].execute
     Rake::Task['nyla'].execute
     Rake::Task['ohare'].execute
+    Rake::Task['orf'].execute
   else
   end
 end
