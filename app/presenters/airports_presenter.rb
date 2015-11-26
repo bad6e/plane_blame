@@ -1,5 +1,10 @@
-class Api::V1::DashboardController < ApplicationController
-  respond_to :json
+class AirportsPresenter
+
+  attr_reader :airport_id
+
+  def initialize(airport_id)
+    @airport_id = airport_id
+  end
 
   def airport_name
     Airport.find(airport_id).name
@@ -73,7 +78,7 @@ class Api::V1::DashboardController < ApplicationController
          day_length: day_length,
         }
       }
-    render json: to_json
+    # render json: to_json
   end
 
   def total_flights
@@ -85,16 +90,14 @@ class Api::V1::DashboardController < ApplicationController
       }
     }
 
-    render json: to_json
+    # render json: to_json
   end
 
   private
 
-  def airport_id
-    params[:id]
-  end
-
   def find_airport_code(airport_id)
     Airport.find(airport_id).code
   end
+
+
 end
