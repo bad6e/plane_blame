@@ -10,8 +10,7 @@ $(document).ready(function(){
           return false;
         },
         select: function(event, ui) {
-          $( "#loaderImg" ).fadeIn(700, function() {
-          });
+          $( "#loaderImg" ).fadeIn(700)
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
             airportInformation(ui.item.id);
