@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: {format: :json} do
       resources :airports, only: [:show]
+      resources :departures, only: [:index]
       get "/search", to: 'auto_complete#search'
-      get "/total/:id", to: 'dashboard#total'
-      get "/all", to: 'dashboard#total_flights'
     end
   end
 end

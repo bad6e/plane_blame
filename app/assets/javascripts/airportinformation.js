@@ -1,7 +1,7 @@
 var airportInformation = function(id) {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:3000/api/v1/total/' + id,
+    url: 'http://localhost:3000/api/v1/airports/' + id,
     dataType: 'json',
     success: function(response){
       nameParser(response)
