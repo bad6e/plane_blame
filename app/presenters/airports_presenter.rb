@@ -62,20 +62,15 @@ class AirportsPresenter
          on_time_percentage: on_time_percentage,
          number_of_flights: number_of_flights,
          airline_names: airline_names,
-         # delay_index: delays,
+         delay_index: delays,
          day_length: day_length,
         }
       }
-    # render json: to_json
   end
-
-
 
   private
 
   def find_airport_code(airport_id)
     Airport.find(airport_id).code
   end
-
-
 end
