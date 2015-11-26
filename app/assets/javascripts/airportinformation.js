@@ -9,7 +9,9 @@ var airportInformation = function(id) {
       delayindexParser(response)
       ontimeParser(response)
       $('#loaderImg').hide();
-      $('#all_html').show();
+
     }
   })
 }
+
+

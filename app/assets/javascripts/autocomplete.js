@@ -10,7 +10,7 @@ $(document).ready(function(){
           return false;
         },
         select: function(event, ui) {
-          $( "#loaderImg" ).fadeIn( "slow", function() {
+          $( "#loaderImg" ).fadeIn(700, function() {
           });
           $('#select_origin').val(ui.item.name);
           $('#link_origin_id').val(ui.item.id);
