@@ -5,6 +5,8 @@ function gauge(score){
     min: 0,
     max: 5,
     decimals: 1,
+    label: "Delay Index",
+    relativeGaugeSize: true,
     gaugeWidthScale: 0.6,
     customSectors: [{
       color : "#33CC33",

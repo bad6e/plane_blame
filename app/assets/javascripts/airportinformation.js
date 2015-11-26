@@ -4,12 +4,16 @@ var airportInformation = function(id) {
     url: 'https://planeblame.herokuapp.com/api/v1/airports/' + id,
     dataType: 'json',
     success: function(response){
-      nameParser(response)
-      statsParser(response)
-      delayindexParser(response)
-      ontimeParser(response)
+      var scroll = $('#search_bar')[0];
+      nameParser(response);
+      statsParser(response);
+      delayindexParser(response);
+      ontimeParser(response);
       $('#loaderImg').hide();
-      $('#all_html').show();
+      scroll.scrollIntoView();
     }
   })
 }
+
+
+
