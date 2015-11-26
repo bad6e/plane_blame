@@ -1,5 +1,10 @@
-class Api::V1::DashboardController < ApplicationController
-  respond_to :json
+class AirportsPresenter
+
+  attr_reader :airport_id
+
+  def initialize(airport_id)
+    @airport_id = airport_id
+  end
 
   def airport_name
     Airport.find(airport_id).name
@@ -45,18 +50,6 @@ class Api::V1::DashboardController < ApplicationController
     Airport.find(airport_id).departures.last_updated_at
   end
 
-  def total_departures_all
-    Departure.total_departures
-  end
-
-  def on_time_departures_all
-    Departure.total_on_time_flights
-  end
-
-  def late_departures_all
-    Departure.total_late_flights
-  end
-
   def total
     sleep(1.5)
      to_json =
@@ -73,26 +66,9 @@ class Api::V1::DashboardController < ApplicationController
          day_length: day_length,
         }
       }
-    render json: to_json
-  end
-
-  def total_flights
-    to_json =
-    {total_flights:
-      {total: total_departures_all,
-      on_time_departures: on_time_departures_all,
-      late_departures: late_departures_all,
-      }
-    }
-
-    render json: to_json
   end
 
   private
-
-  def airport_id
-    params[:id]
-  end
 
   def find_airport_code(airport_id)
     Airport.find(airport_id).code
