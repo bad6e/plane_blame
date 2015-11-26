@@ -19,6 +19,7 @@
 //= require circlegraph
 //= require justgage-1.1.0.min
 //= require raphael-2.1.4.min
-//= require jquery.slicknav.js
+//= require jquery.slicknav
+//= require odometer.min
 
 //= require_tree .
