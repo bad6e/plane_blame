@@ -10,7 +10,7 @@ RSpec.describe Departure, type: :feature do
     @airline_two   = Airline.create( name: "American Airlines",
                                     code: "AA")
 
-    @airline_three = Airline.create(name: "Frontier",
+    @airline_three = Airline.create(name: "Frontier Airlines",
                                     code: "F9")
 
     @airline_four  = Airline.create(name: "United Airlines",
@@ -62,13 +62,25 @@ RSpec.describe Departure, type: :feature do
 
   xit "user sees total PlaneBlame Stats", js: true do
     visit root_path
-    expect(page).to have_content(000)
+
+    within('.odometer1') do
+      expect(page).to have_content(7)
+    end
+
+    within('.odometer2') do
+      expect(page).to have_content(3)
+    end
+
+    within('.odometer3') do
+      expect(page).to have_content(4)
+    end
+
     within('#search_field') do
       fill_in "search", with: @airport_one.name
     end
   end
 
-  it "user can see the best to worst airlines" do
+  it "user can see the best to worst airlines in isotope graph" do
     visit root_path
 
     expect(page).to have_content(50)

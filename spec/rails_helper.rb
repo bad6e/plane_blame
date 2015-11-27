@@ -9,8 +9,8 @@ require 'capybara/rails'
 require "capybara/rspec"
 require 'vcr'
 require 'webmock'
-ActiveRecord::Migration.maintain_test_schema!
 
+ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
