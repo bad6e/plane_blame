@@ -7,46 +7,52 @@ RSpec.describe Departure, type: :feature do
     @airline_one   = Airline.create(name: "Southwest Airlines",
                                     code: "WN")
 
-    @airline_two    = Airline.create(name: "American Airlines",
-                                     code: "AA")
+    @airline_two   = Airline.create( name: "American Airlines",
+                                    code: "AA")
 
-    @airline_three  = Airline.create(name: "Frontier",
-                                     code: "F9")
+    @airline_three = Airline.create(name: "Frontier",
+                                    code: "F9")
 
-    @airline_four   = Airline.create(name: "United Airlines",
-                                     code: "UA")
+    @airline_four  = Airline.create(name: "United Airlines",
+                                    code: "UA")
 
-    @departure_two = Departure.create(dep_gate_delays: 16 ,
+    Departure.create(dep_gate_delays: 16 ,
                     airline_id: @airline_two.id,
                     airport_id: @airport_one.id,
                     flight_id: 1112,
                     flight_number: '1236')
 
-    @departure_two = Departure.create(dep_gate_delays: 18 ,
+    Departure.create(dep_gate_delays: 13 ,
+                    airline_id: @airline_two.id,
+                    airport_id: @airport_one.id,
+                    flight_id: 1233,
+                    flight_number: '1236')
+
+    Departure.create(dep_gate_delays: 18 ,
                     airline_id: @airline_three.id,
                     airport_id: @airport_one.id,
                     flight_id: 1113,
                     flight_number: '1237')
 
-    @departure_two = Departure.create(dep_gate_delays: 20 ,
+    Departure.create(dep_gate_delays: 20 ,
                     airline_id: @airline_four.id,
                     airport_id: @airport_one.id,
                     flight_id: 1114,
                     flight_number: '1238')
 
-    @departure_two = Departure.create(dep_gate_delays: 1,
+    Departure.create(dep_gate_delays: 1,
                     airline_id: @airline_one.id,
                     airport_id: @airport_one.id,
                     flight_id: 1115,
                     flight_number: '1239')
 
-    @departure_two = Departure.create(dep_gate_delays: 2 ,
+    Departure.create(dep_gate_delays: 2 ,
                     airline_id: @airline_one.id,
                     airport_id: @airport_one.id,
                     flight_id: 1116,
                     flight_number: '1210')
 
-    @departure_one = Departure.create(dep_gate_delays: 16 ,
+    Departure.create(dep_gate_delays: 16 ,
                     airline_id: @airline_one.id,
                     airport_id: @airport_one.id,
                     flight_id: 1111,
@@ -54,7 +60,7 @@ RSpec.describe Departure, type: :feature do
 
   end
 
-  it "user sees total PlaneBlame Stats" do
+  xit "user sees total PlaneBlame Stats", js: true do
     visit root_path
     expect(page).to have_content(000)
     within('#search_field') do
@@ -65,7 +71,9 @@ RSpec.describe Departure, type: :feature do
   it "user can see the best to worst airlines" do
     visit root_path
 
+    expect(page).to have_content(50)
     expect(page).to have_content(67)
+    expect(page).to have_content(0)
     expect(page).to have_content('On-Time')
   end
 end
