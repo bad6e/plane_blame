@@ -9,8 +9,8 @@ require 'capybara/rails'
 require "capybara/rspec"
 require 'vcr'
 require 'webmock'
-ActiveRecord::Migration.maintain_test_schema!
 
+ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
@@ -48,6 +48,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   allow_http_connections_when_no_cassette = true
+  config.ignore_localhost = true
 end
 
 
