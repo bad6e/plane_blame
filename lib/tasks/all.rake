@@ -1,6 +1,6 @@
 desc "update delays"
 task :explode => :environment do
-  times = [0,6,11,18]
+  times = [0,6,12,18]
   if times.include?(Time.now.hour)
     Rake::Task['atl'].execute
     Rake::Task['dallas'].execute
@@ -11,6 +11,5 @@ task :explode => :environment do
     Rake::Task['nyla'].execute
     Rake::Task['ohare'].execute
     Rake::Task['orf'].execute
-  else
   end
 end
