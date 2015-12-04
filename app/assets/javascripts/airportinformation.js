@@ -1,8 +1,7 @@
 var airportInformation = function(id) {
   $.ajax({
     type: 'GET',
-    url: 'https://planeblame.herokuapp.com/api/v1/airports/' + id,
-    dataType: 'json',
+    url: '/api/v1/airports/' + id,
     success: function(response){
       var scroll = $('#search_bar')[0];
       nameParser(response);
