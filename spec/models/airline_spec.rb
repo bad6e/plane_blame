@@ -7,7 +7,7 @@ RSpec.describe Airline, type: :model do
   }
 
   let(:airline_two) {
-    Issue.create(name: "American Airlines", code: "AA")
+    Airline.create(name: "American Airlines", code: "AA")
   }
 
   it "is valid" do
