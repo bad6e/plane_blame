@@ -1,7 +1,7 @@
 $( document ).ready( function() {
   $.ajax({
     type: 'GET',
-    url: 'https://planeblame.herokuapp.com/api/v1/departures',
+    url: '/api/v1/departures',
     dataType: 'json',
     success: function(response){
       setTimeout(function(){
